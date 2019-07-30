@@ -85,8 +85,9 @@ TEMPLATE_DIRS = (
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
-        'TIMEOUT': 60
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+#        'TIMEOUT': 60
     }
 }
 
@@ -159,9 +160,9 @@ CORS_ALLOW_METHODS = (
 
 # Memcache
 
-from memcacheify import memcacheify
+# from memcacheify import memcacheify
 
-CACHES = memcacheify()
+# CACHES = memcacheify()
 
 
 APPEND_SLASH = True
